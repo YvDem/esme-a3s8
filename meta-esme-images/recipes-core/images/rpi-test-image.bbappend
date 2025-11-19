@@ -1,1 +1,1 @@
-IMAGE_INSTALL += "packagegroup-esme-utils"
+IMAGE_INSTALL:append = " packagegroup-esme"
