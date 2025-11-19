@@ -1,0 +1,48 @@
+# Recipe created by recipetool
+# This is the basis of a recipe and may need further editing in order to be fully functional.
+# (Feel free to remove these comments when editing.)
+
+# Unable to find any files that looked like license statements. Check the accompanying
+# documentation and source headers and set LICENSE and LIC_FILES_CHKSUM accordingly.
+#
+# NOTE: LICENSE is being set to "CLOSED" to allow you to at least start building - if
+# this is not accurate with respect to the licensing of the software being built (it
+# will not be in most cases) you must specify the correct value before using this
+# recipe for anything other than initial testing/development!
+LICENSE = "CLOSED"
+LIC_FILES_CHKSUM = ""
+
+# remote repo of sources files of group a3s8, on branch master
+SRC_URI += " file://0001-Added-c-source-file.patch"
+
+inherit pkgconfig
+inherit update-rc.d
+
+DEPENDS += "libgpiod (< 2.0)"
+
+PREFERRED_VERSION_libgpiod = "1.6.4"
+
+INITSCRIPT_PACKAGES = "${PN}"
+INITSCRIPT_NAME = "esme-gpio26-toggle.sh"
+
+# NOTE: this is a Makefile-only piece of software, so we cannot generate much of the
+# recipe automatically - you will need to examine the Makefile yourself and ensure
+# that the appropriate arguments are passed in.
+
+do_configure () {
+	# Specify any needed configure commands here
+	:
+}
+
+do_compile () {
+	# You will almost certainly need to add additional arguments here
+	oe_runmake
+}
+
+do_install () {
+	# NOTE: unable to determine what to put here - there is a Makefile but no
+	# target named "install", so you will need to define this yourself
+	oe_runmake install INSTALL_DIR=${D}
+	
+}
+
