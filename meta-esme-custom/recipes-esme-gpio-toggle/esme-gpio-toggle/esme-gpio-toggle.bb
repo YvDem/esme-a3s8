@@ -13,7 +13,8 @@ LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
 # remote repo of sources files of group a3s8, on branch master
-SRC_URI += " file://0001-Added-c-source-file.patch"
+SRC_URI += " git://github.com/YvDem/esme-gpio-toggle-a3s8.git;branch=master;protocol=https;destsuffix=${BP}"
+SRCREV = "b542b38f595d28977ba26e0ad56794aaf3eb501a"
 
 inherit pkgconfig
 inherit update-rc.d
