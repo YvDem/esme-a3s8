@@ -25,6 +25,7 @@ PREFERRED_VERSION_libgpiod = "1.6.4"
 
 INITSCRIPT_PACKAGES = "${PN}"
 INITSCRIPT_NAME = "esme-gpio26-toggle.sh"
+INITSCRIPT_PARAMS = "start 99 3 4 5 . stop 20 0 1 2 6 ."
 
 # NOTE: this is a Makefile-only piece of software, so we cannot generate much of the
 # recipe automatically - you will need to examine the Makefile yourself and ensure
